@@ -1,8 +1,8 @@
 package max.hruslov.service;
 
-import max.hruslov.model.User;
+import max.hruslov.model.Participant;
 
 public interface CurrentUserService {
 
-    User getCurrentUser();
+    Participant getCurrentUser();
 }

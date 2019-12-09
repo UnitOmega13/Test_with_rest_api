@@ -9,14 +9,19 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name = "USERS")
+@Table(name = "Participant")
 @AllArgsConstructor
 @NoArgsConstructor
 @EntityListeners({AuditingEntityListener.class})
-public class User {
+public class Participant {
 
     @Id
     @GeneratedValue
     private Long userID;
     private String name;
+    private String surName;
+    private Data birthDay;
+    private Integer age;
+    private String subject;
+
 }

@@ -1,25 +1,25 @@
 package max.hruslov.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import max.hruslov.model.User;
+import max.hruslov.model.Participant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import max.hruslov.repository.UserRepository;
+import max.hruslov.repository.ParticipantRepository;
 import max.hruslov.service.CurrentUserService;
 
 @Service
 @RequiredArgsConstructor
 public class CurrentUserServiceImpl implements CurrentUserService {
 
-    private UserRepository userRepository;
+    private ParticipantRepository participantRepository;
 
     @Autowired
-    public void userRepositoryDI(UserRepository userRepository){
-        this.userRepository = userRepository;
+    public void userRepositoryDI(ParticipantRepository participantRepository){
+        this.participantRepository = participantRepository;
     }
 
     @Override
-    public User getCurrentUser() {
-        return userRepository.findAllByUserID(1L);
+    public Participant getCurrentUser() {
+        return participantRepository.findAllByUserID(1L);
     }
 }
